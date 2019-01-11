@@ -7,6 +7,9 @@
   * Note: Loading the model can take several seconds.
   * It is best to load the model once and save a reference to it.
   * Use Google Chrome Browser on PC, Tablets, Phones. (Highly Recommended) 
+  
+## Object Detection:
+Object detection is the process of finding instances of real-world objects such as faces, bicycles, and buildings in images or videos. Object detection algorithms typically use extracted features and learning algorithms to recognize instances of an object category.
 
 ## Detecting Objects
 To make object detection predictions, all we need to do is import the TensorFlow model, coco-ssd, which can be installed with a package manager like NPM or simply imported in a <script> tag. We can then load the model, and make a prediction.
