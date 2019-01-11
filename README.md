@@ -77,7 +77,8 @@ const ctx = canvas.getContext("2d");
 ctx.strokeRect(x, y, width, height);
 ``` 
 
-
+## Deployment
+The Project is deployed in Codesandbox
 
 ## Streaming from the Webcam
 To run real-time detection on a webcam stream is almost as easy as changing from an <img> tag, to a <video> tag …with the simple exception of this giant blob of code to start up the webcam:
