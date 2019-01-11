@@ -5,7 +5,7 @@
 
   
   * **Note: Loading the model can take several seconds. **
-  * **It is best to load the model once and save a reference to it.**
+  * **It is best to load the model once and save a reference to it. **
   * **Use Google Chrome Browser on PC, Tablets, Phones. (Highly Recommended) **
 
 ## Detecting Objects
