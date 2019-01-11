@@ -10,10 +10,72 @@ cocoSsd.load()
   .then(model => model.detect(image))
   .then(predictions => console.log(predictions))
 ```
+ * **Note: Loading the model can take several seconds. It is best to load the model once and save a reference to it.** 
+ 
+The image we pass into the detection function is just a reference to the html <img> tag:
+```
+<img id="image" src="image_url">
 
+``` 
+
+After we get our prediction, we need a way to display it to the screen. It should look something like this:
+
+```
+[{
+  bbox: [x, y, width, height],
+  class: "cat",
+  score: 0.8380282521247864
+}]
+
+``` 
+
+We then use the <canvas> element:
+
+```
+<canvas id="canvas">
+``` 
+
+The canvas element allows us to use the strokeRect function, which maps perfectly with our prediction results:
+
+```
+const x = prediction.bbox[0];
+const y = prediction.bbox[1];
+const width = prediction.bbox[2];
+const height = prediction.bbox[3];
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+ctx.strokeRect(x, y, width, height);
+``` 
+
+
+
+## Streaming from the Webcam
+To run real-time detection on a webcam stream is almost as easy as changing from an <img> tag, to a <video> tag …with the simple exception of this giant blob of code to start up the webcam:
   
+ ```
+const video = document.getElementById("video")
+    
+navigator.mediaDevices
+  .getUserMedia({
+    audio: false,
+    video: {
+      facingMode: "user",
+      width: 600,
+      height: 500
+    }
+  })
+  .then(stream => {
+    video.srcObject = stream
+    video.onloadedmetadata = () => {
+      video.play()
+    }
+  })
   
-  * **Note: Loading the model can take several seconds. It is best to load the model once and save a reference to it.** 
+```  
+
+We can then just pass our video element to our model for detection. However, this time we are going to call requestAnimationFrame which will call our detection function over and over in an infinite loop as fast as it can, skipping frames when it can’t keep up.
   
 ## Dependencies:
 
