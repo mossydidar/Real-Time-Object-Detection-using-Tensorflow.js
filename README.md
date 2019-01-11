@@ -3,6 +3,15 @@
 ## Detecting Objects
 To make object detection predictions, all we need to do is import the TensorFlow model, coco-ssd, which can be installed with a package manager like NPM or simply imported in a <script> tag. We can then load the model, and make a prediction.
   
+ ```
+import * as cocoSsd from "@tensorflow-models/coco-ssd";
+const image = document.getElementById("image")
+cocoSsd.load()
+  .then(model => model.detect(image))
+  .then(predictions => console.log(predictions))
+```
+
+  
   
   * **Note: Loading the model can take several seconds. It is best to load the model once and save a reference to it.** 
   
@@ -16,12 +25,3 @@ To make object detection predictions, all we need to do is import the TensorFlow
 
 
 
-```
-import * as cocoSsd from "@tensorflow-models/coco-ssd";
-
-const image = document.getElementById("image")
-
-cocoSsd.load()
-  .then(model => model.detect(image))
-  .then(predictions => console.log(predictions))
-  ```
