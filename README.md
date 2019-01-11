@@ -1,5 +1,11 @@
 # Real-Time-Object-Detection-using-Tensorflow.js
 
+## Click Here to try it out Live:
+* [Let's GO!!](https://jlo24226ww.codesandbox.io/)
+  
+  
+  * **Note: Loading the model can take several seconds. It is best to load the model once and save a reference to it.**
+
 ## Detecting Objects
 To make object detection predictions, all we need to do is import the TensorFlow model, coco-ssd, which can be installed with a package manager like NPM or simply imported in a <script> tag. We can then load the model, and make a prediction.
   
@@ -10,7 +16,7 @@ cocoSsd.load()
   .then(model => model.detect(image))
   .then(predictions => console.log(predictions))
 ```
- * **Note: Loading the model can take several seconds. It is best to load the model once and save a reference to it.** 
+  
  
 The image we pass into the detection function is just a reference to the html <img> tag:
 ```
@@ -76,6 +82,16 @@ navigator.mediaDevices
 ```  
 
 We can then just pass our video element to our model for detection. However, this time we are going to call requestAnimationFrame which will call our detection function over and over in an infinite loop as fast as it can, skipping frames when it can’t keep up.
+
+``` 
+function detectFrame() {
+  model.detect(video).then(predictions => {
+    renderOurPredictions(predictions)
+    requestAnimationFrame(detectFrame)
+  })
+}
+
+``` 
   
 ## Dependencies:
 
