@@ -102,7 +102,6 @@ function detectFrame() {
     requestAnimationFrame(detectFrame)
   })
 }
-
 ``` 
   
 ## Dependencies:
@@ -113,5 +112,6 @@ function detectFrame() {
 * [React DOM](https://www.npmjs.com/package/react-dom) - This package serves as the entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm.
 * [React Scripts](https://www.npmjs.com/package/react-scripts) - This package includes scripts and configuration used by Create React App.
 
-
+## Acknowledgement:
+ ** Nick Bourdakos
 
