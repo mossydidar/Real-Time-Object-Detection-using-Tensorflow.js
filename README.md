@@ -113,5 +113,5 @@ function detectFrame() {
 * [React Scripts](https://www.npmjs.com/package/react-scripts) - This package includes scripts and configuration used by Create React App.
 
 ## Acknowledgement:
- ** Nick Bourdakos
+ **Nick Bourdakos
 
