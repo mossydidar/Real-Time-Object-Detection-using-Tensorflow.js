@@ -16,7 +16,7 @@ To make object detection predictions, all we need to do is import the TensorFlow
 
 
 
-
+```
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 
 const image = document.getElementById("image")
@@ -24,3 +24,4 @@ const image = document.getElementById("image")
 cocoSsd.load()
   .then(model => model.detect(image))
   .then(predictions => console.log(predictions))
+  ```
