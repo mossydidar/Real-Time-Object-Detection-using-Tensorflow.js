@@ -2,7 +2,7 @@
 
 
 <p align= "center">
-  <img width="850" height="400" src="https://github.com/mossydidar/Real-Time-Object-Detection-using-Tensorflow.js/blob/master/1.png">
+  <img width="750" height="400" src="https://github.com/mossydidar/Real-Time-Object-Detection-using-Tensorflow.js/blob/master/1.png">
 </p>
 
 
